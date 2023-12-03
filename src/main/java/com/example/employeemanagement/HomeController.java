@@ -31,12 +31,31 @@ public class HomeController implements Initializable {
     @FXML
     private Button viewButton;
 
+    @FXML
+    private Button updateButton;
+
 
     @FXML
     private Button addButton;
 
     @FXML
     private Button loginButton;
+
+    @FXML
+    void moveToUpdate(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("UpdateEmployee.fxml"));
+        Parent root = loader.load();
+
+        UpdateEmployeeController updateEmployeeController = loader.getController();
+
+        Stage updateScreenStage = new Stage();
+        updateScreenStage.setTitle("UpdateEmployee");
+        updateScreenStage.setScene(new Scene(root,1230,680));
+        updateScreenStage.show();
+
+        Stage viewStage = (Stage)updateButton.getScene().getWindow();
+        viewStage.close();
+    }
 
     @FXML
     void moveToView(ActionEvent event)throws IOException{
