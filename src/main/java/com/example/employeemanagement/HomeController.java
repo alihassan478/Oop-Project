@@ -28,12 +28,28 @@ public class HomeController implements Initializable {
     @FXML
     private VBox pnitems;
 
+    @FXML
+    private Button viewButton;
+
 
     @FXML
     private Button addButton;
 
     @FXML
     private Button loginButton;
+
+    @FXML
+    void moveToView(ActionEvent event)throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Home.fxml"));
+        Parent root = loader.load();
+
+        HomeController homeController = loader.getController();
+
+        Stage viewScreenStage = new Stage();
+        viewScreenStage.setTitle("View");
+        viewScreenStage.setScene(new Scene(root,1230,680));
+        viewScreenStage.show();
+    }
 
     @FXML
     void moveToHome(ActionEvent event) throws IOException {
