@@ -130,7 +130,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button alignment="BASELINE_LEFT" graphicTextGap="35.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="291.0" style="-fx-background-color: #EBE8F9;" text="Update">
+            <Button fx:id="updateButton" alignment="BASELINE_LEFT" graphicTextGap="35.0" mnemonicParsing="false" prefHeight="41.0" onAction="#moveToUpdate" prefWidth="291.0" style="-fx-background-color: #EBE8F9;" text="Update">
                <graphic>
                   <ImageView fitHeight="15.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" scaleX="1.5" scaleY="1.5" scaleZ="1.5">
                      <image>

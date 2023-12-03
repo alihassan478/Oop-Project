@@ -41,6 +41,28 @@ public class DeleteemployeeController implements Initializable {
     private Button viewButton;
 
     @FXML
+    private Button updateButton;
+
+    @FXML
+    void moveToUpdate(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("UpdateEmployee.fxml"));
+        Parent root = loader.load();
+
+        UpdateEmployeeController updateEmployeeController = loader.getController();
+
+        Stage updateEmployeeStage = new Stage();
+        updateEmployeeStage.setTitle("Update Employee");
+        updateEmployeeStage.setScene(new Scene(root,1230, 680));
+        updateEmployeeStage.show();
+
+        Stage deleteStage = (Stage) updateButton.getScene().getWindow();
+        deleteStage.close();
+
+
+
+    }
+
+    @FXML
     void moveToHome(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin.fxml"));
         Parent root = loader.load();
