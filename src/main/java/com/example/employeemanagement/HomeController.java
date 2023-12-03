@@ -34,12 +34,31 @@ public class HomeController implements Initializable {
     @FXML
     private Button updateButton;
 
+    @FXML
+    private Button deleteButton;
+
 
     @FXML
     private Button addButton;
 
     @FXML
     private Button loginButton;
+
+    @FXML
+    void moveToDelete(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Deleteemployee.fxml"));
+        Parent root = loader.load();
+
+        DeleteemployeeController deleteemployeeController = loader.getController();
+
+        Stage deleteStage = new Stage();
+        deleteStage.setTitle("Delete");
+        deleteStage.setScene(new Scene(root, 1230,680));
+        deleteStage.show();
+
+        Stage viewScreen = (Stage) deleteButton.getScene().getWindow();
+        viewScreen.close();
+    }
 
     @FXML
     void moveToUpdate(ActionEvent event) throws IOException {
